@@ -35,10 +35,6 @@ class BroadcastInfoService(BaseService):
             self.proto.factory.sub_clients.remove(self)
         else:
             self.proto.sendMessage("Not valid action.".encode('utf8'))
-        # def simulate():
-        #     self.proto.factory.broadcast(str(self.msg[random.randint(0,3)]).encode('utf8'))
-        #     # self.proto.factory.loop.call_later(3, simulate)
-        # simulate()
 
     def onClose(self, wasClean, code, reason):
         print("Connection closed: {}".format(reason))
